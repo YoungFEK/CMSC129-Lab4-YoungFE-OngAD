@@ -177,3 +177,7 @@ cd CMSC129-Lab4-YoungFE-OngAD
 
 <img src="integration-test-fail.png" width="500">
 
+
+**Successful execution of all integration tests.**
+
+<img src="integration-test-success.png" width="500">
