@@ -1,19 +1,11 @@
 const express = require("express");
+const createTodo = require("./domain/createTodo");
 
 const app = express();
 
 app.use(express.json());
 
 let todos = [];
-
-function createTodo(title) {
-
-    return {
-        id: Date.now(),
-        title,
-        completed: false
-    };
-}
 
 app.post("/api/todos", (req, res) => {
 
