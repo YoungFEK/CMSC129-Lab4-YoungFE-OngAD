@@ -168,6 +168,12 @@ cd CMSC129-Lab4-YoungFE-OngAD
 
 ## ✅ Unit Test Results
 
-The following screenshot shows the successful execution of all unit tests for todo title validation.
+**The following screenshot shows the successful execution of all unit tests for todo title validation.**
 
 <img src="unit-test-pass.png" width="500">
+
+
+**Failed execution of all integration tests.**
+
+<img src="integration-test-fail.png" width="500">
+
