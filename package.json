@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "scripts": {
+    "start": "node index.js",
     "test": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
@@ -22,5 +23,13 @@
     "cypress": "^15.15.0",
     "jest": "^30.4.2",
     "supertest": "^7.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoungFEK/CMSC129-Lab4-YoungFE-OngAD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YoungFEK/CMSC129-Lab4-YoungFE-OngAD/issues"
+  },
+  "homepage": "https://github.com/YoungFEK/CMSC129-Lab4-YoungFE-OngAD#readme"
 }
