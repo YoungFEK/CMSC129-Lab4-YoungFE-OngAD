@@ -4,6 +4,9 @@ A lightweight, single-resource Todo List web application built using Test-Driven
 
 ---
 
+##Live Deployment
+https://cmsc129-lab4-youngfe-ongad.onrender.com
+
 ## 📋 User Stories
 
 *   **User Story 1 (Create):** As a busy user, I want to type a task title and submit it, So that I can securely store the item in my daily list without forgetting it.
@@ -115,9 +118,9 @@ Integration tests verify communication paths and boundaries across the Express a
 
 ### 3. System Tests (End-to-End User Journeys)
 System tests simulate black-box end-user behaviors by automating a browser instance via Cypress. Every user story maps directly to an E2E spec execution file:
-*   `Create Journey`: 
-*   `Toggle Journey`:
-*   `Delete Journey`
+* `Create Journey`: verifies that users can add a todo item through the UI and immediately see it rendered on screen.
+* `Toggle Journey`: verifies that users can mark a todo as completed using the toggle switch UI.
+* `Delete Journey`: verifies that users can remove an existing todo item from the interface.
 
 ---
 
@@ -165,12 +168,39 @@ cd CMSC129-Lab4-YoungFE-OngAD
 ```
 
 ---
+## CI/CD Setup
 
-## ✅ Unit Test Results
+This project uses GitHub Actions as its CI/CD pipeline solution.
+
+### Workflow Trigger
+The workflow automatically runs on every push to the `main` branch.
+
+### Pipeline Responsibilities
+- Install project dependencies
+- Execute Jest unit tests
+- Execute Jest integration tests
+- Verify successful test completion before merge/deployment
+
+### Red-Green Verification
+The CI pipeline served as evidence for the TDD workflow:
+- `[RED]` commits intentionally produced failing CI runs
+- `[GREEN]` commits restored successful CI execution
+
+### CI Screenshots
+
+
+<img src="Ci.png" width="500">
+
+
+---
+
+##  Unit Test Results
 
 **The following screenshot shows the successful execution of all unit tests for todo title validation.**
 
 <img src="unit-test-pass.png" width="500">
+
+##  Integration Test Results
 
 
 **Failed execution of all integration tests.**
@@ -182,3 +212,22 @@ cd CMSC129-Lab4-YoungFE-OngAD
 
 <img src="integration-test-success-with-refactor.png" width="500">
 
+## Cypress Test Results
+
+**Failed Cypress Test**
+
+<img src="Cypress-fail.png" width="500">
+
+
+**Successful Cypress test**
+
+<img src="Cypress-Succes.png" width="500">
+
+
+## Reflection
+
+This project helped us better understand the importance of the Test-Driven Development (TDD) workflow, especially the Red-Green-Refactor cycle. Writing tests before implementation initially felt difficult because it required planning the expected behavior of the application before creating the actual functionality. However, this process made the development more organized and helped us identify issues earlier during implementation.
+
+One of the biggest challenges was separating the different testing levels properly. We learned the distinction between unit tests, integration tests, and system tests, and how each level focuses on a different part of the application. Configuring Cypress and GitHub Actions also taught us how automated testing and CI pipelines support software quality and reliability.
+
+The project also improved our understanding of component-based frontend design using React. Refactoring the application into reusable components made the codebase cleaner and easier to maintain. Overall, the experience showed us how testing-first development encourages better planning, modularity, and more stable software implementations.
