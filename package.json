@@ -12,12 +12,6 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run"
   },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/tests/system/"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
