@@ -5,6 +5,12 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+
+    res.send("Todo API is running");
+
+});
+
 let todos = [];
 
 app.post("/api/todos", (req, res) => {
