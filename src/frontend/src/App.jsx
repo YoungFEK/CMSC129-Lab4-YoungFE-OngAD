@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
+
 function App() {
 
   const [todos, setTodos] = useState([]);
@@ -51,86 +54,17 @@ function App() {
 
           <h1>Todo List</h1>
 
-          <div className="todo-input-group">
+          <TodoForm
+              title={title}
+              setTitle={setTitle}
+              addTodo={addTodo}
+          />
 
-            <input
-                data-testid="todo-input"
-                type="text"
-                placeholder="Add a new task..."
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-            />
-
-            <button
-                data-testid="add-button"
-                onClick={addTodo}
-            >
-              + Add
-            </button>
-
-          </div>
-
-          <div className="todo-list">
-
-            {todos.length === 0 ? (
-
-                <p className="empty-text">
-                  No tasks yet. Add one to get started!
-                </p>
-
-            ) : (
-
-                todos.map((todo) => (
-
-                    <div
-                        key={todo.id}
-                        className={`todo-item ${
-                            todo.completed
-                                ? "completed"
-                                : ""
-                        }`}
-                    >
-
-        <span className="todo-title">
-            {todo.title}
-        </span>
-
-                      <div className="todo-actions">
-
-                        <label className="switch">
-
-                          <input
-                              type="checkbox"
-                              checked={todo.completed}
-                              onChange={() =>
-                                  toggleTodo(todo.id)
-                              }
-                          />
-
-                          <span className="slider"></span>
-
-                        </label>
-
-                        <button
-                            data-testid="delete-button"
-                            className="delete-btn"
-                            onClick={() =>
-                                deleteTodo(todo.id)
-                            }
-                        >
-                          Delete
-                        </button>
-
-                      </div>
-
-                    </div>
-
-
-                ))
-
-            )}
-
-          </div>
+          <TodoList
+              todos={todos}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+          />
 
         </div>
 
